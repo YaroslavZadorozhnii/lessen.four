@@ -1,0 +1,45 @@
+/*  Выведите на экран прямоугольник из *.
+Причем высота и ширина прямоугольника
+вводятся с клавиатуры. 
+Например ниже представлен прямоугольник с высотой 4 и шириной 5.
+*****
+*   *
+*   *
+*****
+*/
+
+public class Rectangle {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int height;
+		int width;
+		for (;;) {
+			System.out.println("Input some height of rectangle");
+			height = scanner.nextInt();
+			if (height < 3) {
+				System.out.println("It number height is too small to draw a rectangle");
+				System.out.println();
+				continue;
+			}
+			System.out.println("Input some width of rectangle");
+			width = scanner.nextInt();
+			if (width < 3) {
+				System.out.println("It numbers width is too small to draw a rectangle");
+				System.out.println();
+			} else {
+				break;
+			}
+		}
+		for (int j = 1; j <= height; j++) {
+			for (int i = 1; i <= height; i++) {
+				if (j == 1 || j == height || i - 1 == 0 || i - width == 0) {
+					System.out.print("*");
+				} else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
+	}
+}
