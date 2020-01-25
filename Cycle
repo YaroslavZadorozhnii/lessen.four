@@ -1,0 +1,52 @@
+/* С помощью цикла (только одного) нарисовать такую фигуру.
+Причем максимальная высота этой фигуры вводиться с клавиатуры
+(в примере максимальная высота - 4) 
+* 
+** 
+*** 
+**** 
+*** 
+** 
+*
+*/
+import java.util.*;
+
+public class Сycle {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Input some number");
+		int num = scanner.nextInt();
+		int s = 0;
+		int q = 0;
+		for (int i = 1; i - 1 <= num; i++) {
+			if(s < num) {
+				System.out.print("*");
+				if(s < i) {
+					s=s+1;
+					i = 0;
+					System.out.println();
+				}
+			} else if(s == num) {
+				q = s-1;
+				i = 0;
+				s = s+1;
+			} else if(s > num){
+				System.out.print("*");
+				if(q == i) {
+					q = q-1;
+					i = 0;
+					System.out.println();
+				}
+				if(q == 0) {
+					break;
+				}
+				
+				
+			}
+		}
+
+
+	}
+
+}
