@@ -16,8 +16,14 @@ public class Clock {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Input some number");
+		System.out.println("Введите число");
 		int num = scanner.nextInt();
+		if(num < 0) {
+			num = num * -1;
+			System.out.println("Отрицательные числа не подойдут."
+					+ " Будем пользоваться аналогичным положительным числом. ");
+			System.out.println();
+		}
 		if (num % 2 == 0) {
 			num = num + 1;
 			if(num != 1) {
